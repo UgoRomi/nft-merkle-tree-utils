@@ -64,8 +64,7 @@ const Home: NextPage = () => {
     setProof(proof || []);
   }, [userAddress, tree]);
 
-  const formatProof = (proof: string[]) =>
-    `[${proof.map((hex) => `"${hex}"`).join(',')}]`;
+  const formatProof = (proof: string[]) => `[${proof.join(',')}]`;
 
   return (
     <>
@@ -157,6 +156,19 @@ const Home: NextPage = () => {
                   }}
                 >
                   <p>{tree.getHexRoot()}</p>
+                </div>
+              </div>
+
+              <div>
+                <h1 className='font-bold text-xl'>List of addresses:</h1>
+                <div
+                  className='break-all mt-5 p-6 bg-amber-100 text-slate-800 font-semibold rounded-md cursor-pointer'
+                  onClick={() => {
+                    copyToClipboard(formatProof(addresses));
+                    toast('Addresses copied to clipboard');
+                  }}
+                >
+                  <p>{formatProof(addresses)}</p>
                 </div>
               </div>
 
