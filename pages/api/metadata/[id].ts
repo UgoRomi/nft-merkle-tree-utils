@@ -28,7 +28,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   await cors(req, res);
   const { id } = req.query;
   const response = {
-    name: `FFPASS #${id}`,
+    name: `FFPASS  #${id}`,
     image:
       'https://firebasestorage.googleapis.com/v0/b/frogfunding-1343d.appspot.com/o/Pass%20(1).gif?alt=media&token=f857a1f3-91b5-424d-8ef2-8518bbe1f43e',
     attributes: [
