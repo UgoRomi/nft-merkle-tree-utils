@@ -3,6 +3,17 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { MerkleTree } from 'merkletreejs';
 import keccak256 from 'keccak256';
 import clientPromise from '../../lib/mongodb';
+import Cors from 'cors';
+import initMiddleware from '../../lib/initMiddleware';
+
+// Initialize the cors middleware
+const cors = initMiddleware(
+  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
+  Cors({
+    // Only allow requests with GET, POST and OPTIONS
+    methods: ['GET', 'HEAD'],
+  })
+);
 
 type Data = {
   root: string;
