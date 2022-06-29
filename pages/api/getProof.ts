@@ -7,7 +7,7 @@ import Cors from 'cors';
 import initMiddleware from '../../lib/initMiddleware';
 
 type Data = {
-  proof: string;
+  proof: string[];
 };
 
 // Initialize the cors middleware
@@ -39,7 +39,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const proof = tree?.getHexProof(
     keccak256((req.query.address as string).toLowerCase())
   );
-  res.status(200).json({ proof: `[${proof.join(',')}]` });
+  res.status(200).json({ proof });
 }
 
 export default handler;
