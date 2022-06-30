@@ -5,7 +5,7 @@ import initMiddleware from '../../../lib/initMiddleware';
 
 type Data = {
   name: string;
-  image: string;
+  animation_url: string;
   attributes: {
     trait_type: string;
     slug: string;
@@ -28,8 +28,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   await cors(req, res);
   const { id } = req.query;
   const response = {
-    name: `FFPASS  #${id}`,
-    image:
+    name: `FFPASS #${id}`,
+    animation_url:
       'https://firebasestorage.googleapis.com/v0/b/frogfunding-1343d.appspot.com/o/Pass%20(1).gif?alt=media&token=f857a1f3-91b5-424d-8ef2-8518bbe1f43e',
     attributes: [
       {
