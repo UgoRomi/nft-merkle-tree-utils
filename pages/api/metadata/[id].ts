@@ -5,7 +5,7 @@ import initMiddleware from '../../../lib/initMiddleware';
 
 type Data = {
   name: string;
-  animation_url: string;
+  image: string;
   attributes: {
     trait_type: string;
     slug: string;
@@ -29,8 +29,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const { id } = req.query;
   const response = {
     name: `FFPASS #${id}`,
-    animation_url:
-      'https://firebasestorage.googleapis.com/v0/b/frogfunding-1343d.appspot.com/o/Pass%20(1).gif?alt=media&token=f857a1f3-91b5-424d-8ef2-8518bbe1f43e',
+    image:
+      'https://cdn.discordapp.com/attachments/263010453376991233/992009389890338907/FFPASS.webp',
     attributes: [
       {
         trait_type: 'DOPE',
